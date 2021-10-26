@@ -8,7 +8,7 @@ class rnn_custom_dataset(Dataset):
     def __init__(self, data) -> None:
         super().__init__()
         xy = data
-        self.x = xy[:, :, :-1].astype("int32")
+        self.x = xy[:, :, :-1].astype("float32")
         self.y = xy[:, :, -1].astype("float32")
         self.n_samples = xy.shape[0]
         del xy
